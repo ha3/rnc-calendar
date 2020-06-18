@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { DAYS, DAY_NAMES, MONTH_NAMES, PREV_MONTH, NEXT_MONTH } from '../../constants';
 import { useCalendar } from '../../hooks';
-import { isForbiddenSelector } from '../../utils/isForbiddenSelector';
+import isForbiddenSelector from '../../utils/isForbiddenSelector';
 
 import Text from '../Text';
 import Arrow from '../Arrow';

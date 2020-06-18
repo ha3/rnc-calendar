@@ -2,9 +2,9 @@ import React, { useReducer, useCallback, useEffect, useRef, memo } from 'react';
 import { View } from 'react-native';
 
 import { MONTHS, DAYS, PREV_MONTH, NEXT_MONTH } from '../../constants';
-import { isForbiddenSelector } from '../../utils/isForbiddenSelector';
-import { isDateObject } from '../../utils/isDateObject';
-import { CalendarContext } from '../../context';
+import isForbiddenSelector from '../../utils/isForbiddenSelector';
+import isDateObject from '../../utils/isDateObject';
+import CalendarContext from '../../context';
 import { useDidUpdateEffect } from '../../hooks';
 
 import Header from '../Header';
