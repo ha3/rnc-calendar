@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { CalendarContext } from './contexts';
+import { CalendarContext } from './context';
 
 
 export function useDidUpdateEffect(fn, deps) {
