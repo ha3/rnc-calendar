@@ -16,7 +16,7 @@ const getStyle = ({ isPressed }) => {
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'center',
-      backgroundColor: isPressed ? 'blue' : 'transparent'
+      
     }
   });
 }

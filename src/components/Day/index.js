@@ -36,11 +36,12 @@ const Day = memo(({ day, isPressed, isDisabled }) => {
   }
 
   const color = isDisabled ? 'yellow' : day.month !== THIS_MONTH ? 'purple' :  undefined;
+  const backgroundColor = isPressed ? 'blue' : 'transparent';
 
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        style={styles.button}
+        style={[styles.button, { backgroundColor }]}
         isPressed={isPressed}
         onPress={onPress}
         disabled={isDisabled}
