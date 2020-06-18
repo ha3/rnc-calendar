@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text as RNText } from 'react-native';
 
 
 const Text = ({ children,...props }) => {
   return (
-    <Text style={...props}>
+    <RNText style={...props}>
       {children}
-    </Text>
+    </RNText>
   );
 }
 
