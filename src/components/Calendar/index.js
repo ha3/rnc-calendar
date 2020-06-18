@@ -5,7 +5,7 @@ import { MONTHS, DAYS, PREV_MONTH, NEXT_MONTH } from '../../constants';
 import isForbiddenSelector from '../../utils/isForbiddenSelector';
 import isDateObject from '../../utils/isDateObject';
 import CalendarContext from '../../context';
-import { useDidUpdateEffect } from '../../hooks';
+import { useRunFuncOnUpdates } from '../../hooks';
 
 import Header from '../Header';
 import Month from '../Month';
@@ -96,8 +96,6 @@ function reducer(state, action) {
   }
 }
 
-let renderingCount = 0;
-
 const Calendar = props => {
   const [state, dispatch] = useReducer(reducer, {
     ...initialState,
@@ -108,10 +106,6 @@ const Calendar = props => {
     }
   });
   const dispatchWithProps = useCallback(args => dispatch({...args, props: {...props}}), [props]);
-  const prevMonth = useRef();
-  const prevYear = useRef();
-
-  console.log("rendering", ++renderingCount, state.currentMonth);
 
   useEffect(() => {
     if (props.currentDate) {
@@ -122,21 +116,9 @@ const Calendar = props => {
     }
   }, [props.currentDate]);
 
-  useDidUpdateEffect(() => {
-    if (props.onMonthChange && prevMonth.current && prevMonth.current !== state.currentMonth) {
-      props.onMonthChange(state.currentMonth);
-    }
-
-    prevMonth.current = state.currentMonth;
-  }, [state.currentMonth, props.onMonthChange]);
-
-  useDidUpdateEffect(() => {
-    if (props.onYearChange && prevYear.current && prevYear.current !== state.currentYear) {
-      props.onYearChange(state.currentYear);
-    }
-
-    prevYear.current = state.currentYear;
-  }, [state.currentYear, props.onYearChange]);
+  useRunFuncOnUpdates(props.onMonthChange, state.currentMonth);
+  useRunFuncOnUpdates(props.onYearChange, state.currentYear);
+  useRunFuncOnUpdates(props.onDateSelected, state.selectedDate);
 
   return (
     <CalendarContext.Provider value={dispatchWithProps}>
