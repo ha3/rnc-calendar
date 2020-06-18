@@ -15,10 +15,8 @@ const getStyle = props => {
       textAlign: 'center',
       justifyContent: 'center',
       alignItems: 'center',
-      alignSelf: 'center'
-    },
-    text: {
-
+      alignSelf: 'center',
+      backgroundColor: props.isPressed ? 'blue' : 'transparent'
     }
   });
 }
