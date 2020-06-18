@@ -7,7 +7,7 @@ const getStyle = props => {
       overflow: 'visible',
       width: props.size * 1.9,
       height: props.size * 1.6,
-      transform: props.direction === 'right' && [{ rotate: '180deg)' }]
+      ...props.direction === 'right' && {transform: [{ rotate: '180deg' }]}
     },
     arrowTail: {
       backgroundColor: props.color,
