@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const getStyle = props => {
+const getStyle = ({ isPressed }) => {
 
   return StyleSheet.create({
     container: {
@@ -16,7 +16,7 @@ const getStyle = props => {
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'center',
-      backgroundColor: props.isPressed ? 'blue' : 'transparent'
+      backgroundColor: isPressed ? 'blue' : 'transparent'
     }
   });
 }

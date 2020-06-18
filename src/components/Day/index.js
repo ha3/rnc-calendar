@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { useMemo, memo } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import { THIS_MONTH } from '../../constants';
@@ -6,12 +6,12 @@ import { useCalendar } from '../../hooks';
 
 import Text from '../Text';
 
-import styles from './styles';
-
+import getStyle from './styles';
 
 
 const Day = memo(({ day, isPressed, isDisabled }) => {
   const dispatch = useCalendar();
+  const styles = useMemo(() => getStyle(isPressed), [isPressed]);
 
   const onPress = () => {
     if (isDisabled) return;
