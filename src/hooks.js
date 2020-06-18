@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 
 import { CalendarContext } from './context';
 
