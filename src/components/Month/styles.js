@@ -1,6 +1,6 @@
-import { Stylesheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
   month: {
     flex: 1,
     flexDirection: 'row',

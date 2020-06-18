@@ -1,7 +1,7 @@
-import { Stylesheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const getStyle = props => {
-  return Stylesheet.create({
+  return StyleSheet.create({
     container: {
       backgroundColor: 'transparent',
       overflow: 'visible',
