@@ -4,7 +4,7 @@ import { Text as RNText } from 'react-native';
 
 const Text = ({ children,...props }) => {
   return (
-    <RNText style={...props}>
+    <RNText style={{...props}}>
       {children}
     </RNText>
   );
