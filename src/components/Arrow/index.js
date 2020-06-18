@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
-import getStyle from './style';
+import getStyle from './styles';
 
 
 const Arrow = ({ onPress, ...props }) => {
