@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 import { THIS_MONTH } from '../../constants';
 import { useCalendar } from '../../hooks';
